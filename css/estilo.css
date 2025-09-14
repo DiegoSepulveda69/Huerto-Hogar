@@ -309,3 +309,68 @@ button:hover,
     padding: 0.6rem;
   }
 }
+
+/* Estilo de Blogs */
+
+/* Fuente general */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fff;
+  padding-top: 70px; /* espacio para el navbar fijo */
+}
+
+/* Título principal */
+.titulo-noticias {
+  font-weight: 700;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.noticia-card {
+  margin-top: 30px; /* separa las tarjetas del título */
+  background-color: #f0f0f0;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+/* Texto */
+.noticia-texto {
+  flex: 1;
+  padding: 20px;
+}
+.noticia-texto h3 {
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.noticia-texto p {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Imagen */
+.noticia-img {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+.noticia-img img {
+  max-width: 100%;
+  border: 2px solid #ccc;
+}
+
+/* Botón */
+.btn-ver {
+  margin-top: 15px;
+  border: 1px solid #000;
+  background: #fff;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.btn-ver:hover {
+  background: #ddd;
+}
