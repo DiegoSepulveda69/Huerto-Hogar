@@ -374,3 +374,48 @@ body {
 .btn-ver:hover {
   background: #ddd;
 }
+
+/*Estilo de carrito*/
+
+
+.product-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
+  background: #f8f9fa;
+}
+.cart {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 15px;
+  width: 300px;
+  display: none;
+  z-index: 1000;
+}
+.cart-header {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px; 
+  object-fit: cover; 
+  border-radius: 8px;
+}
+
+.cart .remove-item {
+  font-size: 16px;    
+  padding: 2px 6px;   
+  line-height: 1;     
+  width: auto;        
+}
