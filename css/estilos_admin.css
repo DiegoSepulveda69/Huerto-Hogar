@@ -1,6 +1,17 @@
 .sidebar {
-    min-height: 100vh;
+    display: flex;
+  flex-direction: column;
+  height: 100vh; 
+  min-height: 100vh;
 }
+.logo_huerto{
+    display: block;
+    margin: 0 auto 30px auto;
+    max-width: 100%;
+    height: auto;
+    width: 100px; 
+}
+
 
 .main_header {
     background-color: #4CAF50;

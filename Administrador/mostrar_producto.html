@@ -1,61 +1,87 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear usuario</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/estilos_admin.css">
-   
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lista productos</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/estilos_admin.css">
 </head>
 <body>
 
-    <div class="d-flex">
-       <div class="sidebar bg-white p-3 shadow-sm" style="width: 250px;">
-    <img src="../img/logo_huerto_hogar.png" alt="Logo de Huerto Hogar" class="logo_huerto">
-    <nav class="nav flex-column my-3 mb-5">
+  <!-- LAYOUT PRINCIPAL-->
+  <div class="d-flex">
+
+    <!--SIDEBAR-->
+    <div class="sidebar bg-white p-3 shadow-sm" style="width: 250px;">
+      <img src="../img/logo_huerto_hogar.png" alt="Logo de Huerto Hogar" class="logo_huerto">
+
+      <!-- Menú principal -->
+      <nav class="nav flex-column my-3 mb-5">
         <a class="nav-link text-secondary ps-3" href="home.html"><i class="fas fa-home me-2"></i> Panel de control</a>
         <a class="nav-link text-secondary ps-3" href="mostrar_usuario.html"><i class="fas fa-user-friends me-2"></i> Lista Usuarios</a>
-        <a class="nav-link text-secondary ps-3" href="nuevo_usuario.html"><i class="fas fa-user-plus me-2"></i> Nuevo usuario</a>
         <a class="nav-link text-primary fw-bold ps-3" href="mostrar_producto.html"><i class="fas fa-boxes me-2"></i> Lista Productos</a>
-        <a class="nav-link text-secondary ps-3" href="nuevo_producto.html"><i class="fas fa-box-open me-2"></i> Nuevo Productos</a>
-    </nav>
-<nav class="nav flex-column mt-auto p-3 border-top">
-        <a class="nav-link text-secondary ps-3" href="#"> Configuracion</a>
-        <a class="nav-link text-secondary ps-3" href="#"> Perfil</a>
-    </nav>
+      </nav>
+
+      <!-- Menú inferior -->
+      <nav class="nav flex-column mt-auto p-3 border-top">
+        <a class="nav-link text-secondary ps-3" href="#">Configuración</a>
+        <a class="nav-link text-secondary ps-3" href="#">Perfil</a>
+        <button id="logout-btn" class="btn btn-danger">
+  <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+</button>
+
+      </nav>
+    </div>
+
+    <!--CONTENIDO PRINCIPAL -->
+    <div class="flex-grow-1 p-4">
+
+      <!-- Encabezado -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="d-flex align-items-center">
+          <h1 class="h3 mb-0 me-3">Productos</h1>
+          <a href="nuevo_producto.html" class="btn btn-success">NUEVO PRODUCTO</a>
+        </div>
+        <i class="fas fa-bell fs-5 text-secondary"></i>
+      </div>
+
+      <!-- Tabla de usuarios -->
+   <h5 class="mb-3">Lista de Productos</h5>
+<div class="table-responsive">
+  <table class="table table-striped table-hover mb-0">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Categoría</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Stock</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="lista-productos">
+      <!-- Productos generados dinámicamente -->
+    </tbody>
+  </table>
 </div>
 
-        <div class="flex-grow-1 p-4">
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <div class="d-flex align-items-center">
-                    <h1 class="h3 mb-0 me-3">Productos</h1>
-                  <a href="nuevo_producto.html" class="btn btn-success">NUEVO PRODUCTO</a>
-                </div>
-                
-                <i class="fas fa-bell fs-5 text-secondary"></i>
-            </div>
-
-            <div class="bg-white p-4 rounded-3 shadow-sm">
-                <h5 class="mb-3">Lista de Usuarios</h5>
-                <div class="table-responsive">
-                    <table class="table table-striped table-hover mb-0">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Rol</th>
-                                <th scope="col">Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody id="lista-usuarios">
-                            </tbody>
-                    </table>
-                </div>
-            </div>
+              <!-- Datos generados dinámicamente -->
+            </tbody>
+          </table>
         </div>
+      </div>
+
     </div>
-    <script src="../js/app.js"></script>
+  </div>
+
+ 
+  <script src="../js/app.js"></script>
+  <script src="../js/session-hadler.js"></script>
+  <script src="../js/login.js"></script>
+  <script src="../js/lista_productos.js"></script>
+  <script src="../js/creacion_producto.js"></script>
 </body>
 </html>

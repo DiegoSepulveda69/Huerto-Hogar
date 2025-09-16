@@ -1,82 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/estilo.css">
-    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - Huerto Hogar</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <a class="navbar-brand" href="#">
-  <img src="../img/logo_huerto_hogar.png" alt="Logo Huerto" class="logo-nav"/> Huerto Hogar </a>
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="home.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="productos.html">Productos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="nosotros.html">Nosotros</a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link" href="blogs.html">Blog</a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link" href="contacto.html">Contactos</a>
-        </li>
-      
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Buscar...." aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Buscar</button>
-      </form>
+  <!-- NAVBAR-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="#">
+          <img src="../img/logo_huerto_hogar.png" alt="Logo Huerto" class="logo-nav"/> Huerto Hogar
+        </a>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="blogs.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="contacto.html">Contactos</a></li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Buscar...." aria-label="Search"/>
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<nav class="bg-dark text-white text-center py-5">
+  <!-- ENCABEZADO DE PÁGINA-->
+  <nav class="bg-dark text-white text-center py-5 mt-5">
     <div class="container">
       <h1 class="display-4">Contacto</h1>
     </div>
   </nav>
 
-<div class="container mt-5 pt-5 text-center">
-
-  <div class="card shadow mx-auto mb-5" style="max-width: 500px;">
-    <div class="card-header bg-light fw-bold text-center">
-      FORMULARIO DE CONTACTOS
-    </div>
-    <div class="card-body">
-      <form>
-        <div class="mb-3 text-start">
-          <label for="nombre" class="form-label small fw-bold">NOMBRE COMPLETO</label>
-          <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre completo">
-        </div>
-        <div class="mb-3 text-start">
-          <label for="correo" class="form-label small fw-bold">CORREO</label>
-          <input type="email" class="form-control" id="correo" placeholder="Ingrese su correo">
-        </div>
-        <div class="mb-3 text-start">
-          <label for="contenido" class="form-label small fw-bold">CONTENIDO</label>
-          <textarea class="form-control" id="contenido" rows="4" placeholder="Escriba su mensaje"></textarea>
-        </div>
-        <div class="text-center">
-          <button type="submit" class="btn btn-outline-dark px-4">ENVIAR MENSAJE</button>
-        </div>
-      </form>
+  <!--  FORMULARIO DE CONTACTO-->
+  <div class="container mt-5 pt-5 text-center">
+    <div class="card shadow mx-auto mb-5" style="max-width: 500px;">
+      <div class="card-header bg-light fw-bold text-center">
+        FORMULARIO DE CONTACTOS
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="mb-3 text-start">
+            <label for="nombre" class="form-label small fw-bold">NOMBRE COMPLETO</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre completo">
+          </div>
+          <div class="mb-3 text-start">
+            <label for="correo" class="form-label small fw-bold">CORREO</label>
+            <input type="email" class="form-control" id="correo" placeholder="Ingrese su correo">
+          </div>
+          <div class="mb-3 text-start">
+            <label for="contenido" class="form-label small fw-bold">CONTENIDO</label>
+            <textarea class="form-control" id="contenido" rows="4" placeholder="Escriba su mensaje"></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-outline-dark px-4">ENVIAR MENSAJE</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
-</div>
-    
+
 </body>
 </html>

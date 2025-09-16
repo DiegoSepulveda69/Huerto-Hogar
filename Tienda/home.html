@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
+
 <body>
+
 <!-- Barra de iteam -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
   <div class="container-fluid">
@@ -45,12 +47,11 @@
 </nav>
 
 
-<!-- Barra de inicio -->
-<nav class="navbar navbar-expand-lg  barra-inicio">
+<!-- Barra de inicio dinámica -->
+<nav class="navbar navbar-expand-lg barra-inicio">
   <div class="container">
-    <div class="d-flex ms-auto">
-      <a class="nav-link" href="iniciar_sesion.html">Iniciar sesión</a>
-      <a class="nav-link ms-3" href="registro_usuario.html">Registrar usuario</a>
+    <div class="d-flex ms-auto align-items-center" id="login-area">
+      <!-- Aquí se insertará el contenido por JavaScript -->
     </div>
   </div>
 </nav>
@@ -166,5 +167,8 @@
       &copy; 2025 Huerto Hogar · Todos los derechos reservados · Contacto: contacto@huertohogar.cl
     </div>
   </main>
+
+<script src="../js/session-hadler.js"></script>
 </body>
 </html>
+ 
