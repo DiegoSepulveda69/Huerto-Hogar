@@ -1,49 +1,49 @@
+// creacion_producto.js
+
 document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('formulario-producto');
 
-    const formularioProducto = document.getElementById('formulario-producto');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-    // Función para obtener productos de localStorage
-    const obtenerProductos = () => {
-        const productos = localStorage.getItem('productos');
-        return productos ? JSON.parse(productos) : [];
-    };
+    // recoger valores
+    const nombre = document.getElementById('nombreProducto').value.trim();
+    const descripcion = document.getElementById('descripcionProducto').value.trim();
+    const categoria = document.getElementById('categoriaProducto').value;
+    const precio = parseFloat(document.getElementById('precioProducto').value);
+    const stock = parseInt(document.getElementById('stockProducto').value, 10);
+    const inputImagen = document.getElementById('imagenProducto');
+    const file = inputImagen.files[0];
 
-    // Función para guardar productos en localStorage
-    const guardarProductos = (productos) => {
-        localStorage.setItem('productos', JSON.stringify(productos));
-    };
+    // Leer imagen como Base64
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        const imagenBase64 = event.target.result; // string data:image/...base64,...
 
-    // Función para manejar el registro de un nuevo producto
-    const registrarProducto = (e) => {
-        e.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+        guardarProducto({ nombre, descripcion, categoria, precio, stock, imagen: imagenBase64 });
+      };
 
-        // Obtener los valores de los campos
-        const nombreProducto = document.getElementById('nombreProducto').value;
-        const descripcionProducto = document.getElementById('descripcionProducto').value;
-        const precioProducto = document.getElementById('precioProducto').value;
-        const stockProducto = document.getElementById('stockProducto').value;
-        const categoriaProducto = document.getElementById('categoriaProducto').value;
+      reader.readAsDataURL(file);
+    } else {
+      // si no se seleccionó imagen, guardar sin imagen
+      guardarProducto({ nombre, descripcion, categoria, precio, stock, imagen: null });
+    }
 
-        // Crear un objeto con los datos del producto
-        const nuevoProducto = {
-            id: Date.now(), // ID único para cada producto
-            nombre: nombreProducto,
-            descripcion: descripcionProducto,
-            precio: precioProducto,
-            stock: stockProducto,
-            categoria: categoriaProducto,
-        };
+    // limpiar formulario si quieres
+    form.reset();
+  });
 
-        // Obtener la lista de productos actual, agregar el nuevo y guardarlo
-        const productos = obtenerProductos();
-        productos.push(nuevoProducto);
-        guardarProductos(productos);
+  function guardarProducto(datos) {
+    const productos = JSON.parse(localStorage.getItem('productos')) || [];
+    const id = Date.now().toString();
+    const nuevo = { id, ...datos };
+    productos.push(nuevo);
+    localStorage.setItem('productos', JSON.stringify(productos));
 
-        alert('¡Producto registrado con éxito!');
-        formularioProducto.reset(); // Limpia los campos del formulario
-    };
-
-    // Agregar el evento 'submit' al formulario
-    formularioProducto.addEventListener('submit', registrarProducto);
-
+    // luego si quieres refrescar la lista si estás en la misma página
+    if (window.listaProductosRefrescar) {
+      window.listaProductosRefrescar();
+    }
+  }
 });
